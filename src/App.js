@@ -1,9 +1,9 @@
 import "./App.css";
 
 function App() {
-  return <div className="App">
-    Home
-  </div>;
+  return <main className="App">
+    lifting-up
+  </main>;
 }
 
 export default App;
