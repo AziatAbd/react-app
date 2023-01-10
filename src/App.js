@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import PostForm from "./components/postForm/PostForm";
 import PostList from "./components/postList/PostList";
 
 const DUMMY_POSTS = [
@@ -23,9 +24,14 @@ const DUMMY_POSTS = [
 function App() {
   const [posts, setPosts] = useState(DUMMY_POSTS);
 
+  const addPostHandler = (newPost) => {
+    setPosts([...posts, newPost]);
+  };
+
   return (
     <div className="App">
-    <PostList />
+      <PostForm onPost={addPostHandler} />
+      <PostList posts={posts} />
     </div>
   );
 }
